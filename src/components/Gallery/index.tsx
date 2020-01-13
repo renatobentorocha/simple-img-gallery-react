@@ -77,7 +77,6 @@ const Gallery: React.FC<Props> = ({
 
     return (
       <InputRadio
-        key={index.toString()}
         checked={checked === id}
         value={checked}
         onChange={() => handleCheck(id)}
@@ -90,14 +89,9 @@ const Gallery: React.FC<Props> = ({
     const nextIndex = index === images.length - 1 ? `_${0}` : `_${index + 1}`;
 
     return (
-      <>
+      <div key={`__${index.toString()}`}>
         {renderInputRadio(index)}
-        <ImageWrapper
-          image={value}
-          className="slide_img"
-          id={`__${index}`}
-          key={`__${index.toString()}`}
-        >
+        <ImageWrapper image={value} className="slide_img" id={`__${index}`}>
           {!infiniteLoop && (
             <>
               <Prev style={labelStyle} className="prev" htmlFor={prevIndex}>
@@ -113,7 +107,7 @@ const Gallery: React.FC<Props> = ({
             </>
           )}
         </ImageWrapper>
-      </>
+      </div>
     );
   }
 
