@@ -24,6 +24,7 @@
     "plugin:@typescript-eslint/recommended"
   ],
   "rules": {
+    "react/prop-types": "off",
     "import/extensions": [
       "error",
       "ignorePackages",
@@ -34,6 +35,7 @@
         "tsx": "never"
       }
     ],
+    "import/prefer-default-export": "off",
     "prettier/prettier": "error",
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/no-unused-vars": "off",
